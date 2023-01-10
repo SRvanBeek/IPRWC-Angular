@@ -1,0 +1,34 @@
+<div class="container-fluid">
+  <h1 class="row welcomeText">Welcome!</h1>
+  <div class="randomProduct row">
+    <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner" style="box-shadow: #4D4E53">
+        <div class="carousel-item" [ngClass]="{'active': randomProduct === randomProducts[0]}" data-bs-interval="10000000" *ngFor="let randomProduct of randomProducts" style="height: 50vh">
+          <div class="productImages">
+            <a [routerLink]="['/products',randomProduct.type, randomProduct.id]" class="randomImage">
+              <img src="{{randomProduct.imageUrl}}" alt="{{randomProduct.name}}" class="randomImage"></a>
+          </div>
+          <div class="carousel-caption d-md-block" style="padding-top: 1rem; color: lightgray">
+            <div class="caption-text">
+              <h5>{{randomProduct.name}}</h5>
+              <p>{{randomProduct.type}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+</div>

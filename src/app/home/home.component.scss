@@ -1,0 +1,52 @@
+.welcomeText {
+  display: flex;
+  justify-content: center;
+  margin: 2rem auto;
+
+}
+
+.productImages {
+  height: 100%;
+  margin: 0 auto;
+  display: block;
+  align-items: center;
+}
+.randomImage {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  margin: 0 auto;
+  transition: scale ease-in-out 0.1s;
+}
+
+.carousel :hover {
+   .caption-text  {
+     width: fit-content;
+     margin: 0 auto;
+     padding-left: 2rem;
+     padding-right: 2rem;
+     border: 1px black;
+     border-radius: 20px;
+     background-color: transparentize(gray, 0.2);
+     transition: ease-in-out 1s;
+   }
+}
+
+.carouselBtn :hover {
+  border: 1px #4D4E53;
+  border-radius: 2px;
+  background-color: #4D4E53;
+  opacity: 30%;
+}
+
+@media (max-width: 700px) {
+  .randomImage {
+    scale: 80%;
+  }
+}
+
+@media (max-width: 500px) {
+  .randomImage {
+    scale: 60%;
+  }
+}

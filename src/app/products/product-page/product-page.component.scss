@@ -1,0 +1,81 @@
+.container {
+  margin-top: 2rem;
+}
+
+.productWrapper {
+  //max-width: 750px;
+  height: 50vh;
+  margin-bottom: 2rem;
+}
+
+.selectedImageWrapper {
+  height: 100%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+}
+
+
+.imageSelect {
+  margin-left: 0;
+}
+.imageWrapper {
+  height: 100%;
+  min-width: 500px;
+  flex-wrap: wrap-reverse;
+}
+
+.selectableImages {
+  height: 100%;
+  max-width: 150px;
+  overflow-y: auto;
+}
+
+.imageSelect > img {
+  max-height: 15vh;
+  width: auto;
+  margin: 0 auto;
+  padding-bottom: 1rem;
+}
+
+.imageSelect > img:hover {
+  cursor: pointer;
+  opacity: 80%;
+}
+#selectedImage {
+  max-height: 100%;
+  max-width: 100%;
+  align-self: center;
+}
+
+@media (max-width: 575px) {
+  .selectableImages {
+    display: flex;
+    margin-top: 2rem;
+    max-width: 100%;
+    height: 15vh;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    justify-content: center;
+  }
+
+  .imageSelect {
+    width: 15vh;
+    height: 80%;
+  }
+
+  .imageSelect > img {
+    height: 100%;
+    padding-bottom: 0;
+  }
+
+  .container {
+    margin-top: 20vh;
+  }
+
+  @media (max-width: 575px) {
+    .imageWrapper {
+      min-width: auto;
+    }
+  }
+}

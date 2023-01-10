@@ -1,0 +1,55 @@
+
+.bg-image-vertical {
+  position: relative;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  background-position: right center;
+  background-size: auto 100%;
+}
+
+#loginImage {
+  margin: 0 auto;
+  width: 254px;
+}
+#welcomeText {
+  text-align: center;
+  font-size: 30px;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  color: #4D4E53;
+}
+
+.loginForm {
+  margin: 0 auto;
+}
+
+.inputField {
+  width: 226px;
+  height: 37px;
+  margin: 0 auto;
+}
+.loginBtn {
+  height: 29px;
+  width: 146px;
+  margin: 0 auto;
+  text-align: center;
+  --bs-btn-padding-x: none;
+}
+
+.registerText {
+  padding-top: 1rem;
+  margin: 0 auto;
+  width: fit-content;
+  font-size: small;
+  color: black;
+}
+
+.registerText :hover {
+  cursor: pointer;
+  color: dodgerblue;
+}
+
+
+
+
+

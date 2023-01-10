@@ -18,6 +18,10 @@ export class ProductService {
     return this.http.get<any>(environment.apiUrl + "/api/products")
   }
 
+  public getAllByType(type: string): Observable<any> {
+    return this.http.get<any>(environment.apiUrl + "/api/products/bytype/" + type)
+  }
+
   public getRandom(amount: number): Observable<any> {
     return this.http.get<any>(environment.apiUrl + "/api/products/random/" + amount)
   }
@@ -27,6 +31,10 @@ export class ProductService {
   }
 
   public getExtraImages(productId: number): Observable<any> {
-    return this.http.get<any>(environment.apiUrl + "/api/products/images/" + productId)
+    return this.http.get<any>(environment.apiUrl + "/api/productImages/" + productId)
+  }
+
+  public getProductTypes(): Observable<any> {
+    return this.http.get<any>(environment.apiUrl + "/api/productTypes/")
   }
 }

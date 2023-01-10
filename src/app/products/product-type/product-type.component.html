@@ -1,0 +1,14 @@
+<div class="row">
+  <div class="col-sm-4 typeCard" *ngFor="let type of types">
+
+    <div class="cardContent">
+      <div class="row typeImage">
+        <img class="img-fluid" src="{{type.imageUrl}}" alt="{{type.name}}">
+      </div>
+      <div class="row">
+        <h4 class="typeName" [routerLink]="type.name">{{type.name}}</h4>
+      </div>
+  </div>
+  </div>
+
+</div>

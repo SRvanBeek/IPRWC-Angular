@@ -1,0 +1,20 @@
+.productItem {
+  display: flex;
+  flex-wrap: wrap;
+  height: 200px;
+  transition: ease-in-out 0.3s;
+  margin-bottom: 1rem;
+}
+
+.productItem:hover {
+  cursor: pointer;
+  scale: 1.02;
+  opacity: 80%;
+}
+
+.productImage {
+  max-height: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  display: flex;
+}

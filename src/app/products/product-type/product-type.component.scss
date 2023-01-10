@@ -1,0 +1,24 @@
+.row {
+
+}
+.cardContent {
+  height: 100%;
+  transition: scale ease-in-out 0.3s;
+}
+.typeImage {
+  overflow: clip;
+  padding: 0;
+  height: 80%;
+}
+
+.typeCard:hover > .cardContent {
+    opacity: 80%;
+    scale: 1.02;
+
+}
+
+.typeName {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}

@@ -1,0 +1,32 @@
+<div class="container container-fluid" *ngIf="product">
+  <div class="row productWrapper">
+    <div class="col-sm-6 row imageWrapper">
+      <div class="col selectableImages">
+        <div *ngFor="let image of images">
+          <div class="row imageSelect">
+            <img class="bg-image hover-zoom" (click)="onImageSelected(image)" [src]="image" alt="{{product.name}} image {{image}}">
+            <span id="foreground"></span>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-8 selectedImageWrapper">
+        <img id="selectedImage" class="img" src="{{selectedImage}}" alt="{{product.name}} image">
+      </div>
+    </div>
+    <div class="col optionsWrapper">
+      <div class="row">
+        <h4>{{ product.name }}</h4>
+        <div class="col-sm-6">
+        </div>
+        <div class="col"></div>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col-sm-10">
+      <h2>Description:</h2>
+      <p>{{product.description}}</p>
+    </div>
+  </div>
+</div>

@@ -1,16 +1,21 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {LoginComponent} from "./login/login.component";
 import {ProductsComponent} from "./products/products.component";
 import {HomeComponent} from "./home/home.component";
-import {ProductDetailComponent} from "./products/product-detail/product-detail.component";
 import {ProductPageComponent} from "./products/product-page/product-page.component";
+import {ProductListComponent} from "./products/product-list/product-list.component";
+import {ShoppingCartComponent} from "./shopping-cart/shopping-cart.component";
 
 const routes: Routes = [
-  {path: '', component: LoginComponent},
   {path: 'home', component: HomeComponent},
-  {path: 'products', component: ProductsComponent},
-  {path: 'productview/:id', component: ProductPageComponent}
+  {path: 'products', component: ProductsComponent, children: [
+      {path: ':type', component: ProductListComponent},
+    ] },
+  {path: 'products/:type/:id', component:  ProductPageComponent},
+  {path: 'cart', component: ShoppingCartComponent},
+
+  //final wildcard
+  { path: '**', redirectTo: 'home' },
 ];
 
 @NgModule({
