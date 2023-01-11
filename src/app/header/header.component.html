@@ -2,39 +2,10 @@
   <div class="container-fluid">
     <span class="navbar navbar-brand" style="color: white; font-size: xx-large">BlueCool</span>
     <span class="navbar navbar-text" style="color: white; font-size: larger">
-      <app-login></app-login>
     </span>
-    <button class="navbar-toggler hamburgerBut" type="button" data-bs-toggle="offcanvas"
-            data-bs-target="#navbarOffcanvasLg"
-            aria-controls="navbarOffcanvasLg">
+    <button class="navbar-toggler hamburgerBut" type="button" (click)="openOffCanvas()">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="offcanvas offcanvas-end text-bg-dark " tabindex="-1" id="navbarOffcanvasLg"
-         aria-labelledby="navbarOffcanvasLgLabel">
-      <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel" style="color: white; font-size: x-large">Menu</h5>
-        <button #closeNav type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-      </div>
-      <div class="offcanvas-body">
-        <ul class="navbar-nav  ms-auto">
-          <li [routerLinkActive]="['active']" class="nav-item">
-            <a class="nav-link" [routerLink]="['home']">
-              <span data-bs-target=".collapse.show" data-bs-toggle="collapse">Home</span></a>
-          </li>
-          <li [routerLinkActive]="['active']" class="nav-item">
-            <a class="nav-link" [routerLink]="['products']">
-              <span data-bs-target=".collapse.show" data-bs-toggle="collapse">Products</span></a>
-          </li>
-          <li [routerLinkActive]="['active']" class="nav-item">
-            <a class="nav-link" [routerLink]="['cart']">
-              <span data-bs-target=".collapse.show" data-bs-toggle="collapse">Cart</span></a>
-          </li>
-          <li class="nav-item">
-            <a [routerLink]="['']" class="nav-link" (click)="logout()">Log Out</a>
-          </li>
-        </ul>
-      </div>
-    </div>
   </div>
 </nav>
 

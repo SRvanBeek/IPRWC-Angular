@@ -1,7 +1,5 @@
 import {Component, EventEmitter, Output} from '@angular/core';
 import {AuthService} from "../shared/_services/auth.service";
-import {ActivatedRoute, Params, Router} from "@angular/router";
-
 
 
 @Component({
@@ -16,5 +14,9 @@ export class HeaderComponent {
 
   logout() {
     this.authService.logout();
+  }
+
+  openOffCanvas() {
+
   }
 }

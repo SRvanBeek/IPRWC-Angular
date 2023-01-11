@@ -1,0 +1,17 @@
+<ul class="navbar-nav  ms-auto">
+  <li [routerLinkActive]="['active']" class="nav-item">
+    <a class="nav-link" [routerLink]="['home']">
+      <span data-bs-target=".collapse.show" data-bs-toggle="collapse">Home</span></a>
+  </li>
+  <li [routerLinkActive]="['active']" class="nav-item">
+    <a class="nav-link" [routerLink]="['products']">
+      <span data-bs-target=".collapse.show" data-bs-toggle="collapse">Products</span></a>
+  </li>
+  <li [routerLinkActive]="['active']" class="nav-item">
+    <a class="nav-link" [routerLink]="['cart']">
+      <span data-bs-target=".collapse.show" data-bs-toggle="collapse">Cart</span></a>
+  </li>
+  <li class="nav-item">
+    <a [routerLink]="['']" class="nav-link" (click)="logout()">Log Out</a>
+  </li>
+</ul>

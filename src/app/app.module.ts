@@ -12,12 +12,12 @@ import {JwtInterceptor} from "./shared/_helper/jwt.interceptor";
 import { HomeComponent } from './home/home.component';
 import { ProductPageComponent } from './products/product-page/product-page.component';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
+import {HeaderModule} from "./header/header.module";
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
     HomeComponent,
     ProductPageComponent,
     ShoppingCartComponent,
@@ -28,7 +28,8 @@ import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
     ProductsModule,
     LoginModule,
     HttpClientModule,
-    SharedModule
+    SharedModule,
+    HeaderModule
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true},
