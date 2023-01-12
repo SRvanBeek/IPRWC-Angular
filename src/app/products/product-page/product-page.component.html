@@ -17,8 +17,12 @@
       <div class="row">
         <h4>{{ product.name }}</h4>
         <div class="col-sm-6">
+          <h5>Price: ${{product.price}}</h5>
         </div>
-        <div class="col"></div>
+        <div class="col">
+          <button class="btn btn-primary" (click)="addToCart()">Add To Cart</button>
+        </div>
+
       </div>
     </div>
   </div>

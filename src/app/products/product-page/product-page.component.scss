@@ -48,6 +48,12 @@
   align-self: center;
 }
 
+@media (max-width: 767px) {
+  .productWrapper {
+    height: auto;
+  }
+}
+
 @media (max-width: 575px) {
   .selectableImages {
     display: flex;
@@ -56,7 +62,6 @@
     height: 15vh;
     flex-wrap: nowrap;
     overflow-x: auto;
-    justify-content: center;
   }
 
   .imageSelect {
@@ -67,10 +72,6 @@
   .imageSelect > img {
     height: 100%;
     padding-bottom: 0;
-  }
-
-  .container {
-    margin-top: 20vh;
   }
 
   @media (max-width: 575px) {

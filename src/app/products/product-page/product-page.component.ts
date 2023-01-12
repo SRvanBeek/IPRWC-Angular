@@ -53,4 +53,15 @@ export class ProductPageComponent {
   onImageSelected(image: string) {
     this.selectedImage = image
   }
+
+  addToCart() {
+    let cart: string[] = [];
+
+    if (localStorage.getItem(("cart"))) {
+      cart = JSON.parse(localStorage.getItem(("cart")));
+    }
+
+    cart.push(String(this.product.id))
+    localStorage.setItem("cart", JSON.stringify(cart))
+  }
 }

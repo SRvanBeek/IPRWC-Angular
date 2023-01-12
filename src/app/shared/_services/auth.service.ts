@@ -119,4 +119,8 @@ export class AuthService {
         }
       )
   }
+
+  public getUserId() {
+    return this.decodedToken().userId
+  }
 }

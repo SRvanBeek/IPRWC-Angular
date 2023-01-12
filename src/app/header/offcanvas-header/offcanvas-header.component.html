@@ -15,7 +15,7 @@
           <span data-bs-target=".collapse.show" data-bs-toggle="collapse">Products</span></a>
       </li>
       <li [routerLinkActive]="['active']" class="nav-item">
-        <a class="nav-link" [routerLink]="['cart']" (click)="offcanvasService.dismiss()">
+        <a class="nav-link" (click)="openCart()">
           <span data-bs-target=".collapse.show" data-bs-toggle="collapse">Cart</span></a>
       </li>
       <li class="nav-item" *ngIf="admin">

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import {AuthService} from "../../shared/_services/auth.service";
 import {LoginComponent} from "../../shared/_modals/login/login.component";
 import {NgbModal, NgbOffcanvas} from "@ng-bootstrap/ng-bootstrap";
+import {ShoppingCartComponent} from "../../shopping-cart/shopping-cart.component";
 
 @Component({
   selector: 'app-offcanvas-header',
@@ -35,5 +36,12 @@ export class OffcanvasHeaderComponent {
       .then((admin: boolean) => {
         this.admin = admin;
       })
+  }
+
+  openCart() {
+    this.offcanvasService.dismiss();
+    setTimeout(() => {
+      this.offcanvasService.open(ShoppingCartComponent, {position: 'end'})
+    } ,400)
   }
 }
