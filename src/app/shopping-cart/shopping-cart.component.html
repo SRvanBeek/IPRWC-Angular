@@ -3,22 +3,23 @@
   <h4 class="offcanvas-title">Cart</h4>
   <button type="button" class="btn-close" aria-label="Close" (click)="offcanvasService.dismiss()"></button>
 </div>
-<div class="offcanvas-body">
-  <div *ngFor="let product of products" class="row" style="max-height: 100px">
-    <div class="col">
+<div class="offcanvas-body" style="height: 80vh; overflow-y: auto">
+  <div *ngFor="let product of products" class="row">
+    <div class="col-sm-8">
       <h5>{{product.name}}</h5>
-      <h6>{{product.price}}</h6>
+      <h6>$ {{product.price | number: '1.2-2'}}</h6>
     </div>
-
-    <div class="col">
-      <img src="{{product.imageUrl}}" alt="{{product.name}}" style="max-height: 80px; margin-left: auto; display: flex">
+    <div class="col-sm-4">
+      <img class="cartImage" src="{{product.imageUrl}}" alt="{{product.name}}">
     </div>
-    <hr>
+    <hr style="margin-top: 1rem">
   </div>
-  <div class="text-end">
-    <h5>{{totalPrice | number: '1.2-2'}}</h5>
-    <button type="button" class="btn btn-primary" (click)="placeOrder()">Place Order</button>
+</div>
+<div class="offcanvas-bottom">
+  <div class="text-end" style="margin-right: 1rem; margin-left: 1rem">
+    <h5>$ {{totalPrice | number: '1.2-2'}}</h5>
     <button type="button" class="btn btn-outline-dark" (click)="clearCart()">Clear Cart</button>
+    <button type="button" class="btn btn-primary" (click)="placeOrder()" style="margin-left: 0.5rem">Place Order</button>
   </div>
 </div>
 

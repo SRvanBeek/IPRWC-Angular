@@ -8,6 +8,7 @@ import {SharedModule} from "../shared/shared.module";
 import {RouterLink, RouterOutlet} from "@angular/router";
 import { ProductTypeComponent } from './product-type/product-type.component';
 import {ProductPageComponent} from "./product-page/product-page.component";
+import {ToastsContainer} from "../shared/ngb/toast-container.component";
 
 
 
@@ -27,7 +28,8 @@ import {ProductPageComponent} from "./product-page/product-page.component";
         CommonModule,
         SharedModule,
         RouterLink,
-        RouterOutlet
+        RouterOutlet,
+        ToastsContainer
     ]
 })
 export class ProductsModule { }

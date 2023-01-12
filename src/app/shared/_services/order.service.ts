@@ -15,7 +15,11 @@ export class OrderService {
     return this.http.get<any>(environment.apiUrl + "/api/orders")
   }
 
-  public placeOrder(customerId: number, productIds: number[]): Observable<any> {
+  public placeOrder(customerId: number, productIdsString: number[]): Observable<any> {
+    let productIds: number[] = []
+    for (let i = 0; i < productIdsString.length; i++) {
+      productIds.push(productIdsString.at(i))
+    }
     return this.http.post<any>(environment.apiUrl + "/api/orders", {customerId, productIds})
   }
 }

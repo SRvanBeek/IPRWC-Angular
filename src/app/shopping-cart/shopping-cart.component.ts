@@ -52,18 +52,16 @@ export class ShoppingCartComponent {
   }
 
   placeOrder() {
-    let cart: number[];
-    console.log("order")
     if (this.authService.loggedIn()) {
-      console.log("order")
       if (localStorage.getItem('cart')) {
-        cart = JSON.parse(localStorage.getItem('cart'))
-        let productIds: number[]
-
+        let productIds: number[] = JSON.parse(localStorage.getItem('cart'))
         this.orderService.placeOrder(this.authService.getUserId(), productIds)
           .subscribe({
             next: value => {
               console.log(value)
+              if (value.code === 'ACCEPTED') {
+                this.clearCart()
+              }
             }
           })
       }
