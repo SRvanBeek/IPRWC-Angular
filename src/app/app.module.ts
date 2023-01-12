@@ -13,23 +13,30 @@ import { HomeComponent } from './home/home.component';
 import { ProductPageComponent } from './products/product-page/product-page.component';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import {HeaderModule} from "./header/header.module";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AdminPortalComponent } from './admin-portal/admin-portal.component';
+import {HomeModule} from "./home/home.module";
+import {AdminPortalModule} from "./admin-portal/admin-portal.module";
+import {ShoppingCartModule} from "./shopping-cart/shopping-cart.module";
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
-    ProductPageComponent,
-    ShoppingCartComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    BrowserAnimationsModule,
+    HttpClientModule,
+
+    SharedModule,
+    HeaderModule,
     ProductsModule,
     LoginModule,
-    HttpClientModule,
-    SharedModule,
-    HeaderModule
+    HomeModule,
+    AdminPortalModule,
+    ShoppingCartModule
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true},

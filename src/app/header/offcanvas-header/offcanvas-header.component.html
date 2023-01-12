@@ -1,17 +1,31 @@
-<ul class="navbar-nav  ms-auto">
-  <li [routerLinkActive]="['active']" class="nav-item">
-    <a class="nav-link" [routerLink]="['home']">
-      <span data-bs-target=".collapse.show" data-bs-toggle="collapse">Home</span></a>
-  </li>
-  <li [routerLinkActive]="['active']" class="nav-item">
-    <a class="nav-link" [routerLink]="['products']">
-      <span data-bs-target=".collapse.show" data-bs-toggle="collapse">Products</span></a>
-  </li>
-  <li [routerLinkActive]="['active']" class="nav-item">
-    <a class="nav-link" [routerLink]="['cart']">
-      <span data-bs-target=".collapse.show" data-bs-toggle="collapse">Cart</span></a>
-  </li>
-  <li class="nav-item">
-    <a [routerLink]="['']" class="nav-link" (click)="logout()">Log Out</a>
-  </li>
-</ul>
+
+  <div class="offcanvas-header">
+    <h4 class="offcanvas-title">Offcanvas title</h4>
+    <button type="button" class="btn-close" aria-label="Close" (click)="offcanvasService.dismiss()"></button>
+  </div>
+  <div class="offcanvas-body">
+
+    <ul class="navbar-nav  ms-auto">
+      <li [routerLinkActive]="['active']" class="nav-item">
+        <a class="nav-link" [routerLink]="['home']" (click)="offcanvasService.dismiss()">
+          <span data-bs-target=".collapse.show" data-bs-toggle="collapse">Home</span></a>
+      </li>
+      <li [routerLinkActive]="['active']" class="nav-item">
+        <a class="nav-link" [routerLink]="['products']" (click)="offcanvasService.dismiss()">
+          <span data-bs-target=".collapse.show" data-bs-toggle="collapse">Products</span></a>
+      </li>
+      <li [routerLinkActive]="['active']" class="nav-item">
+        <a class="nav-link" [routerLink]="['cart']" (click)="offcanvasService.dismiss()">
+          <span data-bs-target=".collapse.show" data-bs-toggle="collapse">Cart</span></a>
+      </li>
+      <li class="nav-item" *ngIf="admin">
+        <a [routerLink]="['adminPortal']" class="nav-link">Admin Portal</a>
+      </li>
+      <li class="nav-item" *ngIf="!loggedIn">
+        <a class="nav-link" (click)="openLogin()">Log In</a>
+      </li>
+      <li class="nav-item" *ngIf="loggedIn">
+        <a [routerLink]="['']" class="nav-link" (click)="logout()">Log Out</a>
+      </li>
+    </ul>
+  </div>

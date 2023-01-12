@@ -7,6 +7,7 @@ import {ProductsComponent} from "./products.component";
 import {SharedModule} from "../shared/shared.module";
 import {RouterLink, RouterOutlet} from "@angular/router";
 import { ProductTypeComponent } from './product-type/product-type.component';
+import {ProductPageComponent} from "./product-page/product-page.component";
 
 
 
@@ -16,7 +17,8 @@ import { ProductTypeComponent } from './product-type/product-type.component';
         ProductItemComponent,
         ProductDetailComponent,
         ProductsComponent,
-        ProductTypeComponent
+        ProductTypeComponent,
+        ProductPageComponent
     ],
     exports: [
         ProductDetailComponent

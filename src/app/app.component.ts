@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {Router} from "@angular/router";
+import {AuthService} from "./shared/_services/auth.service";
 
 @Component({
   selector: 'app-root',
@@ -8,12 +9,18 @@ import {Router} from "@angular/router";
 })
 export class AppComponent {
   title = 'Course-Project';
-  loadedFeature = 'recipe'
 
-  constructor(public router: Router) {
+  loading: boolean = true;
+
+  constructor(public router: Router, private authService: AuthService) {
   }
 
-  onNavigate(feature: string) {
-    this.loadedFeature = feature
+  ngOnInit() {
+    if(!this.authService.autoLogout(false)) {
+      this.loading = false
+    }
+    this.loading = false;
   }
+
+
 }

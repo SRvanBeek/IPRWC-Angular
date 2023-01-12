@@ -1,5 +1,9 @@
-import {Component, EventEmitter, Output} from '@angular/core';
+import {Component} from '@angular/core';
 import {AuthService} from "../shared/_services/auth.service";
+import {NgbModal, NgbOffcanvas} from "@ng-bootstrap/ng-bootstrap";
+import {OffcanvasHeaderComponent} from "./offcanvas-header/offcanvas-header.component";
+import {LoginComponent} from "../shared/_modals/login/login.component";
+
 
 
 @Component({
@@ -9,14 +13,16 @@ import {AuthService} from "../shared/_services/auth.service";
 })
 export class HeaderComponent {
 
-  constructor(private authService: AuthService) {
+  constructor(private authService: AuthService, private offCanvas: NgbOffcanvas) {
   }
 
   logout() {
     this.authService.logout();
   }
 
-  openOffCanvas() {
 
+
+  openOffCanvas() {
+    this.offCanvas.open(OffcanvasHeaderComponent, {position: 'end'})
   }
 }

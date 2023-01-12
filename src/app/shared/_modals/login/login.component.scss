@@ -49,6 +49,10 @@
   color: dodgerblue;
 }
 
+input.ng-invalid.ng-touched {
+  border: 1px solid red;
+}
+
 
 
 

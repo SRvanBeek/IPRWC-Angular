@@ -37,4 +37,8 @@ export class ProductService {
   public getProductTypes(): Observable<any> {
     return this.http.get<any>(environment.apiUrl + "/api/productTypes/")
   }
+
+  public addProduct(product: Product): Observable<any> {
+    return this.http.post<any>(environment.apiUrl + "/api/products", product)
+  }
 }
