@@ -68,7 +68,7 @@ export class ProductPageComponent {
   }
 
   showSuccess() {
-    this.toastService.show(this.product.name + 'added to cart!', { classname: 'bg-success text-light', delay: 5000 });
+    this.toastService.show(this.product.name + ' added to cart!', { classname: 'bg-primary text-light', delay: 2000 });
   }
 
 

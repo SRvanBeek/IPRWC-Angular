@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {ProductService} from "../../shared/_services/product.service";
 import {Product} from "../../shared/_models/product.model";
+import {NgbActiveModal} from "@ng-bootstrap/ng-bootstrap";
 
 @Component({
   selector: 'app-products-edit',
@@ -15,7 +16,9 @@ export class ProductsEditComponent {
 
   constructor(
     private productService: ProductService,
-    private formBuilder: FormBuilder) {
+    private formBuilder: FormBuilder,
+    public modal: NgbActiveModal
+    ) {
   }
 
   ngOnInit() {

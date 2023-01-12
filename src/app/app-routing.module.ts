@@ -7,8 +7,7 @@ import {ProductListComponent} from "./products/product-list/product-list.compone
 import {ShoppingCartComponent} from "./shopping-cart/shopping-cart.component";
 import {AdminPortalComponent} from "./admin-portal/admin-portal.component";
 import {AuthGuardService} from "./shared/_services/auth-guard.service";
-import {TypeEditComponent} from "./admin-portal/type-edit/type-edit.component";
-import {ProductsEditComponent} from "./admin-portal/products-edit/products-edit.component";
+
 
 const routes: Routes = [
   {path: 'home', component: HomeComponent},
@@ -18,8 +17,6 @@ const routes: Routes = [
   {path: 'products/:type/:id', component:  ProductPageComponent},
   {path: 'cart', component: ShoppingCartComponent},
   {path: 'adminPortal', canActivate: [AuthGuardService] ,component: AdminPortalComponent},
-  {path: 'adminPortal/types', canActivate: [AuthGuardService], component: TypeEditComponent},
-  {path: 'adminPortal/products', canActivate: [AuthGuardService], component: ProductsEditComponent},
   //final wildcard
   { path: '**', redirectTo: 'home' },
 ];

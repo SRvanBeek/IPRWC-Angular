@@ -17,9 +17,10 @@
 </div>
 <div class="offcanvas-bottom">
   <div class="text-end" style="margin-right: 1rem; margin-left: 1rem">
-    <h5>$ {{totalPrice | number: '1.2-2'}}</h5>
-    <button type="button" class="btn btn-outline-dark" (click)="clearCart()">Clear Cart</button>
+    <h5>$ {{cost | number: '1.2-2'}}</h5>
+    <button type="button" class="btn btn-outline-dark" (click)="clearCart(true)">Clear Cart</button>
     <button type="button" class="btn btn-primary" (click)="placeOrder()" style="margin-left: 0.5rem">Place Order</button>
   </div>
 </div>
+<app-toasts></app-toasts>
 

@@ -1,11 +1,7 @@
 import { Component } from '@angular/core';
 import {ProductService} from "../../shared/_services/product.service";
+import {Type} from "../../shared/_models/type.model";
 
-class Type {
-  constructor(public imageUrl: string,
-              public name: string) {
-  }
-}
 
 @Component({
   selector: 'app-product-type',

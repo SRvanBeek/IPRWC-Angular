@@ -10,8 +10,8 @@
       <div class="carousel-inner" style="box-shadow: #4D4E53">
         <div class="carousel-item" [ngClass]="{'active': randomProduct === randomProducts[0]}" data-bs-interval="10000000" *ngFor="let randomProduct of randomProducts" style="height: 50vh">
           <div class="productImages">
-            <a [routerLink]="['/products',randomProduct.type, randomProduct.id]" class="randomImage">
-              <img src="{{randomProduct.imageUrl}}" alt="{{randomProduct.name}}" class="randomImage"></a>
+            <a [routerLink]="['/products',randomProduct.type, randomProduct.id]" class="randomImage" style="flex-shrink: 1; width: 100%; align-items: center;height: 100%;">
+              <img src="{{randomProduct.imageUrl}}" alt="{{randomProduct.name}}" class="randomImage" style="flex-shrink: 1; width: auto; max-height: 50vh"></a>
           </div>
           <div class="carousel-caption d-md-block" style="padding-top: 1rem; color: lightgray">
             <div class="caption-text">

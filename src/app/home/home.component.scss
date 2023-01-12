@@ -8,13 +8,12 @@
 .productImages {
   height: 100%;
   margin: 0 auto;
-  display: block;
   align-items: center;
+  display: flex;
 }
 .randomImage {
   display: flex;
   justify-content: center;
-  height: 100%;
   margin: 0 auto;
   transition: scale ease-in-out 0.1s;
 }

@@ -1,5 +1,5 @@
 <div (click)="onSelected()" class="productItem row">
-  <div class="col-sm-3" style="height:100%">
+  <div class="col col-sm-3" style="height:100%">
     <img
       [src]="product.imageUrl"
       alt="{{product.name}}"
@@ -7,9 +7,9 @@
   </div>
   <div class="col">
     <h5 class="mb-1">{{product.name}}</h5>
-    <p class="mb-1" >{{product.description | shorten}}</p>
+    <p *ngIf="!mobile" class="mb-1" >{{product.description | shorten}}</p>
   </div>
-  <div class="col-sm-2">
+  <div class="col col-sm-2">
     <div class="row">
       <h5>Price:</h5>
     </div>

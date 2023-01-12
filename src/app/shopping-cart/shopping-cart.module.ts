@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {ShoppingCartComponent} from "./shopping-cart.component";
+import {ToastsContainer} from "../shared/ngb/toast-container.component";
 
 
 
@@ -8,8 +9,9 @@ import {ShoppingCartComponent} from "./shopping-cart.component";
   declarations: [
     ShoppingCartComponent
   ],
-  imports: [
-    CommonModule
-  ]
+    imports: [
+        CommonModule,
+        ToastsContainer
+    ]
 })
 export class ShoppingCartModule { }
