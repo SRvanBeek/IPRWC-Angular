@@ -91,7 +91,7 @@ export class AuthService {
     return !!localStorage.getItem('JwtToken');
   }
 
-  private decodedToken() {
+  public decodedToken() {
     let jwt = localStorage.getItem('JwtToken');
     if (!jwt) {
       return null;

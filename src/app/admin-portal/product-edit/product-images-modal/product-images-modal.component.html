@@ -1,0 +1,29 @@
+<div class="modal-header">
+  <h4 class="modal-title">Manage Images</h4>
+  <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss()"></button>
+</div>
+<div class="modal-body row" style="max-height: 500px">
+  <div class="col-sm-9">
+    <form [formGroup]="extraImageForm" class="productForm" style="max-width: 500px">
+      <div class="form-outline" style="padding-bottom: 1.5rem">
+        <input class="inputField form-control"
+               formControlName="image" placeholder="Extra Image"/>
+      </div>
+      <div class="row">
+        <img class="newImage" *ngIf="f['image'].valid" [src]="f['image'].value">
+        <div *ngIf="!f['image'].valid">
+          <mat-icon>block</mat-icon>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="col-sm-3 imageEditWrapper">
+      <img *ngFor="let extraImage of extraImages" [src]="extraImage.image_url" [alt]="extraImage.id">
+  </div>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-success" [hidden]="!extraImageForm.valid" (click)="addImage()">Add image</button>
+  <button class="btn btn-danger" (click)="deleteImages()">Clear Images</button>
+  <button type="button" class="btn" style="background-color: coral" (click)="modal.dismiss()">Finish</button>
+</div>
+<app-toasts></app-toasts>

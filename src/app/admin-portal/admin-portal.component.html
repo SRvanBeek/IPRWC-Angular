@@ -1,5 +1,28 @@
 <div class="adminPortalWrapper">
-    <button class="btn btn-primary" (click)="openAddProductModal()">Manage Products</button>
-    <button class="btn btn-primary" (click)="openAddTypeModal()">Manage Types</button>
-
+  <div class="row welcomeText">
+    <div class="col">
+      <h1>Welcome back, {{authService.decodedToken().username}}</h1>
+    </div>
+  </div>
+  <div class="options">
+    <div class="row optionsWrapper">
+      <div class="col optionsCard">
+        <h4>Manage Products</h4>
+        <hr>
+        <button class="btn" (click)="openAddProductModal()">Add new Product</button>
+        <button class="btn" [routerLink]="'products'">Edit Products</button>
+      </div>
+      <div class="col optionsCard">
+        <h4>Manage Types</h4>
+        <hr>
+        <button class="btn" (click)="openAddTypeModal()">Add Product-Type</button>
+        <button class="btn" [routerLink]="'types'" (click)="editTypes()">Edit Types</button>
+      </div>
+    </div>
+  </div>
+  <div class="row outlet-container">
+    <div class="container-fluid" style="max-width: 100%">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
 </div>

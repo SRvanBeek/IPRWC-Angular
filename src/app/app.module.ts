@@ -18,26 +18,28 @@ import { AdminPortalComponent } from './admin-portal/admin-portal.component';
 import {HomeModule} from "./home/home.module";
 import {AdminPortalModule} from "./admin-portal/admin-portal.module";
 import {ShoppingCartModule} from "./shopping-cart/shopping-cart.module";
+import {ToastsContainer} from "./shared/ngb/toast-container.component";
 
 
 @NgModule({
   declarations: [
     AppComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    HttpClientModule,
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        HttpClientModule,
 
-    SharedModule,
-    HeaderModule,
-    ProductsModule,
-    LoginModule,
-    HomeModule,
-    AdminPortalModule,
-    ShoppingCartModule
-  ],
+        SharedModule,
+        HeaderModule,
+        ProductsModule,
+        LoginModule,
+        HomeModule,
+        AdminPortalModule,
+        ShoppingCartModule,
+        ToastsContainer
+    ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true},
   ],

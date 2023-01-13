@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
-import {ProductsEditComponent} from "./products-edit/products-edit.component";
-import {TypeEditComponent} from "./type-edit/type-edit.component";
+import {ProductModalComponent} from "./product-modal/product-modal.component";
+import {TypeModalComponent} from "./type-modal/type-modal.component";
+import {AuthService} from "../shared/_services/auth.service";
 
 @Component({
   selector: 'app-admin-portal',
@@ -9,14 +10,22 @@ import {TypeEditComponent} from "./type-edit/type-edit.component";
   styleUrls: ['./admin-portal.component.scss']
 })
 export class AdminPortalComponent {
-  constructor(private modalService: NgbModal) {
+  constructor(private modalService: NgbModal, public authService: AuthService) {
   }
 
   openAddProductModal() {
-    this.modalService.open(ProductsEditComponent);
+    this.modalService.open(ProductModalComponent);
   }
 
   openAddTypeModal() {
-    this.modalService.open(TypeEditComponent)
+    this.modalService.open(TypeModalComponent)
+  }
+
+  editProducts() {
+
+  }
+
+  editTypes() {
+
   }
 }

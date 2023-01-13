@@ -1,9 +1,73 @@
 .adminPortalWrapper {
-  display: flex;
-  justify-content: center;
   margin: 2rem auto;
 }
+.welcomeText {
+  justify-content: center;
+}
+
 .btn {
   display: flex;
   justify-content: center;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.optionsWrapper {
+  justify-content: center;
+}
+
+.optionsCard {
+  min-height: 250px;
+  border: 1px solid gray;
+  background-color: rgba(241,241,241,0.84);
+  border-radius: 1rem;
+  margin: 1rem;
+  max-width: 15vw;
+  min-width: 250px;
+  padding: 1rem;
+  transition: ease-in-out 0.2s;
+}
+
+.optionsWrapper :hover{
+    scale: 1.1;
+}
+
+hr {
+  width: 100%;
+  margin-top: 0;
+  margin-bottom: 2rem;
+}
+.btn {
+  background-color: coral;
+  color: white;
+  font-weight: normal;
+  font-size: larger;
+  margin-bottom: 2rem;
+}
+
+.options {
+  margin: 2rem auto;
+  max-width: 900px;
+  width: 80vw;
+
+}
+
+.editField {
+  margin: 1rem auto;
+}
+
+.outlet-container {
+  width: 80%;
+  margin: auto;
+}
+
+@media (max-width: 600px) {
+  .outlet-container {
+    width: 100%;
+  }
 }

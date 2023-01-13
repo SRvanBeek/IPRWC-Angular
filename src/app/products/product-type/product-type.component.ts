@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {ProductService} from "../../shared/_services/product.service";
 import {Type} from "../../shared/_models/type.model";
 
@@ -9,14 +9,8 @@ import {Type} from "../../shared/_models/type.model";
   styleUrls: ['./product-type.component.scss']
 })
 export class ProductTypeComponent {
-  types: Type[] = [
-    new Type('https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/pop-gaming-desktops-1610126113.jpg', 'DESKTOP'),
-    new Type('https://image.coolblue.nl/transparent/max/422x390/content/1ffb23ee41bd5518b2571845cb7677a9', 'LAPTOP'),
-    new Type('https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/pop-gaming-desktops-1610126113.jpg', 'DESKTOP'),
-    new Type('https://image.coolblue.nl/transparent/max/422x390/content/1ffb23ee41bd5518b2571845cb7677a9', 'LAPTOP'),
-    new Type('https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/pop-gaming-desktops-1610126113.jpg', 'DESKTOP'),
-    new Type('https://image.coolblue.nl/transparent/max/422x390/content/1ffb23ee41bd5518b2571845cb7677a9', 'LAPTOP')
-  ]
+  @Input() editMode: boolean = false;
+  types: Type[] = []
 
   constructor(private productService: ProductService) {
   }

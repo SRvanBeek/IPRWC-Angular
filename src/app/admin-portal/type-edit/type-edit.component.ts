@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
-import {NgbActiveModal} from "@ng-bootstrap/ng-bootstrap";
-import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {ProductService} from "../../shared/_services/product.service";
 import {Product} from "../../shared/_models/product.model";
+import {fromEvent, Observable, Subscription} from "rxjs";
+import {ProductService} from "../../shared/_services/product.service";
 import {Type} from "../../shared/_models/type.model";
+import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
+import {TypeModalComponent} from "../type-modal/type-modal.component";
 
 @Component({
   selector: 'app-type-edit',
@@ -11,43 +12,36 @@ import {Type} from "../../shared/_models/type.model";
   styleUrls: ['./type-edit.component.scss']
 })
 export class TypeEditComponent {
-  newTypeForm: FormGroup;
-  loading: boolean;
-  imagePath: string;
+  types: Type[]
+  shortenValue: number;
 
-  constructor(
-    private productService: ProductService,
-    private formBuilder: FormBuilder,
-    public modal: NgbActiveModal
-  ) {
+  constructor(private productService: ProductService, private modal: NgbModal) {
   }
 
   ngOnInit() {
-    this.newTypeForm = this.formBuilder.group({
-      name: ['', Validators.required],
-      image: ['', Validators.required]
-    });
+    this.refresh()
   }
 
-  public get f() {
-    return this.newTypeForm.controls
-  }
-
-  addType() {
-    let type: Type = new Type(
-      this.f['image'].value,
-      this.f['name'].value
-    )
-
-    this.productService.addProductType(type)
+  refresh() {
+    this.types = [];
+    this.productService.getProductTypes()
       .subscribe({
         next: value => {
-          console.log(value)
+          this.types = value.payload;
         }
       })
   }
 
-  previewImage() {
-    this.imagePath = this.f['image'].value
+  editType(type: Type) {
+    const modal = this.modal.open(TypeModalComponent);
+    modal.componentInstance.type = type;
+    modal.componentInstance.finished
+      .subscribe({
+        next: value => {
+          if (value === true) {
+            this.refresh();
+          }
+        }
+      })
   }
 }

@@ -1,0 +1,23 @@
+
+<ul  class="productList">
+  <li class="list-item" *ngFor="let product of products">
+
+    <div class="productInfo">
+      <h5>Id: {{product.id}}</h5>
+      <h5>Name: {{product.name | shorten: shortenValue}}</h5>
+      <h6>Price: ${{product.price | number: '1.2-2'}}</h6>
+    </div>
+    <div class="col-sm-2">
+      <button class="btn" (click)="editProduct(product)"><mat-icon>settings</mat-icon></button>
+      <button class="btn" (click)="addImages(product)"><mat-icon>picture_in_picture</mat-icon></button>
+
+    </div>
+    <div class="col-sm-2">
+    <div class="imgWrapper">
+      <img class="pEditImg" src="{{product.imageUrl}}" alt="{{product.name}}">
+    </div>
+  </div>
+  </li>
+</ul>
+
+<app-toasts></app-toasts>

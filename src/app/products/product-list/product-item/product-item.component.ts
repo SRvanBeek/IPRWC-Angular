@@ -26,7 +26,6 @@ export class ProductItemComponent {
     if (window.innerWidth <= this.mobileWidth) {
       this.mobile = true;
     }
-
     this.resizeObservable$ = fromEvent(window, 'resize')
     this.resizeSubscription$ = this.resizeObservable$.subscribe(evt => {
       if (!this.mobile && (window.innerWidth <= this.mobileWidth)) {

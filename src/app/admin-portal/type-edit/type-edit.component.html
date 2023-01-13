@@ -1,23 +1,18 @@
-<div class="modal-header">
-  <h4 class="modal-title" id="modal-basic-title">Hi there!</h4>
-  <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss()"></button>
-</div>
-<div class="modal-body">
-  <form [formGroup]="newTypeForm" class="productForm" style="max-width: 500px">
-    <div class="form-outline" style="padding-bottom: 1rem">
-      <input class="inputField form-control"
-             formControlName="name" placeholder="Product Name"/>
+<ul  class="productList">
+  <li class="list-item" *ngFor="let type of types">
+
+    <div class="productInfo">
+      <h5>Id: {{type.id}}</h5>
+      <h5>Name: {{type.name | shorten: shortenValue}}</h5>
     </div>
-    <div class="form-outline" style="padding-bottom: 1.5rem">
-      <input class="inputField form-control"
-             formControlName="image" placeholder="Main Product Image"/>
-      <button class="btn btn-primary" (click)="previewImage()">Preview Image</button>
+    <div class="col-sm-2">
+      <button class="btn" (click)="editType(type)"><mat-icon>settings</mat-icon></button>
     </div>
-    <div class="row">
-      <img  [src]="imagePath" alt="new product image">
+    <div class="col-sm-2">
+      <div class="imgWrapper">
+        <img class="pEditImg" src="{{type.imageUrl}}" alt="{{type.name}}">
+      </div>
     </div>
-  </form>
-</div>
-<div class="modal-footer">
-  <button type="button" class="btn btn-outline-dark" [disabled]="loading || !newTypeForm.valid" (click)="addType()">Add Product</button>
-</div>
+  </li>
+</ul>
+<app-toasts></app-toasts>

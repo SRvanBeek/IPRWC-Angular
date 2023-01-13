@@ -1,6 +1,7 @@
 
 <div class="modal-header">
-  <h4 class="modal-title" id="modal-basic-title">Hi there!</h4>
+  <h4 *ngIf="!updateMode" class="modal-title">Add Product</h4>
+  <h4 *ngIf="updateMode" class="modal-title">Update Product</h4>
   <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss()"></button>
 </div>
 <div class="modal-body">
@@ -19,20 +20,25 @@
                formControlName="price" placeholder="Price"/>
       </div>
       <div class="form-outline" style="padding-bottom: 1rem">
-        <input class="inputField form-control"
-               formControlName="description" placeholder="Product Description"/>
+        <textarea class="inputField form-control"
+               formControlName="description" placeholder="Product Description" style="height: 200px"></textarea>
       </div>
       <div class="form-outline" style="padding-bottom: 1.5rem">
         <input class="inputField form-control"
-               formControlName="image" placeholder="Main Product Image"/>
-        <button class="btn btn-primary" (click)="previewImage()">Preview Image</button>
+               formControlName="image" placeholder="Main Product Image" (input)="previewImage()"/>
       </div>
       <div class="row">
-        <img  [src]="imagePath" alt="new product image">
+        <img *ngIf="f['image'].valid" [src]="imagePath">
+        <div *ngIf="!f['image'].valid">
+          <mat-icon>block</mat-icon>
+        </div>
       </div>
     </form>
   </div>
 </div>
 <div class="modal-footer">
-  <button type="button" class="btn btn-outline-dark" [disabled]="loading || !newProductForm.valid" (click)="addProduct()">Add Product</button>
+  <button *ngIf="updateMode" type="button" class="btn btn-outline-dark" style="background-color: coral" [disabled]="loading || !newProductForm.valid" (click)="saveProduct()">Update Product</button>
+  <button *ngIf="!updateMode" type="button" class="btn btn-outline-dark" style="background-color: coral" [disabled]="loading || !newProductForm.valid" (click)="saveProduct()">Save Product</button>
 </div>
+
+<app-toasts></app-toasts>

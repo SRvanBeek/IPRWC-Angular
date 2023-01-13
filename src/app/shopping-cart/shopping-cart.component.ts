@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
-import {NgbActiveOffcanvas} from "@ng-bootstrap/ng-bootstrap";
+import {NgbActiveOffcanvas, NgbModal} from "@ng-bootstrap/ng-bootstrap";
 import {Product} from "../shared/_models/product.model";
 import {ProductService} from "../shared/_services/product.service";
 import {AuthService} from "../shared/_services/auth.service";
 import {OrderService} from "../shared/_services/order.service";
 import {ToastService} from "../shared/_services/toast.service";
+import {LoginComponent} from "../shared/_modals/login/login.component";
 
 @Component({
   selector: 'app-shopping-cart',
@@ -19,7 +20,9 @@ export class ShoppingCartComponent {
               private productService: ProductService,
               private authService: AuthService,
               private orderService: OrderService,
-              private toastService: ToastService) {
+              private toastService: ToastService,
+              private modalService: NgbModal
+              ) {
   }
 
   ngOnInit() {
@@ -71,6 +74,9 @@ export class ShoppingCartComponent {
             }
           })
       }
+    }
+    else {
+      this.modalService.open(LoginComponent)
     }
   }
 }

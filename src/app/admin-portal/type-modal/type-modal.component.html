@@ -1,0 +1,28 @@
+<div class="modal-header">
+  <h4 *ngIf="!updateMode" class="modal-title">Add Type</h4>
+  <h4 *ngIf="updateMode" class="modal-title">Update Type</h4>
+  <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss()"></button>
+</div>
+<div class="modal-body">
+  <form [formGroup]="newTypeForm" class="productForm" style="max-width: 500px">
+    <div class="form-outline" style="padding-bottom: 1rem">
+      <input class="inputField form-control"
+             formControlName="name" placeholder="Product Name"/>
+    </div>
+    <div class="form-outline" style="padding-bottom: 1.5rem">
+      <input class="inputField form-control"
+             formControlName="image" placeholder="Main Product Image" (input)="previewImage()"/>
+    </div>
+    <div class="row">
+      <img *ngIf="f['image'].valid" [src]="f['image'].value">
+      <div *ngIf="!f['image'].valid">
+        <mat-icon>block</mat-icon>
+      </div>
+    </div>
+  </form>
+</div>
+<div class="modal-footer">
+  <button *ngIf="updateMode" type="button" class="btn btn-outline-dark" style="background-color: coral" [disabled]="loading || !newTypeForm.valid" (click)="saveType()">Update Type</button>
+  <button *ngIf="!updateMode" type="button" class="btn btn-outline-dark" style="background-color: coral" [disabled]="loading || !newTypeForm.valid" (click)="saveType()">Save Type</button>
+</div>
+<app-toasts></app-toasts>

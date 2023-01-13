@@ -1,0 +1,21 @@
+.imageEditWrapper {
+  overflow-y: auto;
+  max-height: 400px;
+}
+
+.newImage {
+  max-height: 300px;
+  width: auto;
+  margin: auto;
+}
+
+.imageEditWrapper > img {
+  max-width: 100%;
+  margin-bottom: 1rem;
+  transition: ease-in-out 0.2s;
+
+}
+
+.imageEditWrapper :hover {
+  opacity: 80%;
+}

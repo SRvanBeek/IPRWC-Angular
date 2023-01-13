@@ -1,4 +1,5 @@
-import {AbstractControl, ValidatorFn} from '@angular/forms';
+import {AbstractControl, FormControl, ValidatorFn} from '@angular/forms';
+import {Observable} from "rxjs";
 
 export default class Validation {
 
@@ -19,4 +20,33 @@ export default class Validation {
       }
     };
   }
+
+  static validUrl(control: FormControl): {[s: string]: boolean} {
+      let imageUrl = control.value;
+      let invalid: boolean;
+      try {
+        imageUrl = new URL(imageUrl);
+        invalid = false
+      } catch (_) {
+        invalid = true;
+      }
+
+      if (invalid) {
+        console.log("invalid")
+        return {'invalidUrl': true}
+      }
+      else {
+        return null
+      }
+    };
+
+  static numberValidator(control: FormControl): Promise<any> | Observable<any> {
+    return new Promise<any>((resolve) => {
+      if (isNaN(control.value)) {
+        resolve({isNumber: false});
+      } else {
+        resolve(null);
+      }
+    });
+  };
 }
